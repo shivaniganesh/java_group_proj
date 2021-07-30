@@ -3,6 +3,7 @@ package com.mph.view;
 
 
 import java.io.IOException;
+
 import java.util.List;
 import java.util.Scanner;
 import com.mph.controller.EmployeeController;
@@ -21,10 +22,13 @@ public class MainClass {
 		List elist=null;
 		int choice;
 		try{
+			System.out.println("Welcome to EMS");
+			System.out.println("Enter User name");
 			String un=sc.next();
+			System.out.println("Enter password");
 			String pw=sc.next();
 			
-			String user="sujeet",pass="pass";
+			String user="shishir",pass="pass";
 	
 			
 	        
