@@ -2,11 +2,10 @@ package com.mph.controller;
 
 
 import com.mph.model.Employee1;
-
-
+import java.util.Comparator;
 
 import java.util.ArrayList;
-
+import java.util.Collections;
 import java.util.List;
 
 import java.util.Scanner;
@@ -61,5 +60,11 @@ public class EmployeeController implements EmployeeInterface {
 		
 		elist.forEach(li->System.out.println(li));
 		
+	}
+
+	@SuppressWarnings("unchecked")
+	public void sortEmployeeByName(List elist) {
+		Collections.sort(elist,Employee1.nameComparator);
+		elist.forEach(li->System.out.println(li));
 	}
 }

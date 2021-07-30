@@ -44,6 +44,7 @@ public class MainClass {
 					System.out.println("Enter your Choice:");
 					System.out.println("1. Add Employee");
 					System.out.println("2. View Employee");
+					System.out.println("3. Sort by Employee Name");
 					
 					choice = sc.nextInt();
 
@@ -55,6 +56,10 @@ public class MainClass {
 					}
 					case 2: {
 						ec.viewEmployee(elist);
+						break;
+					}
+					case 3: {
+						ec.sortEmployeeByName(elist);
 						break;
 					}
 

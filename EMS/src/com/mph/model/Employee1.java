@@ -1,6 +1,9 @@
 package com.mph.model;
 
+import java.util.Comparator;
+
 public class Employee1 {
+	
 	private int employeeNumber;
 	private String employeeName;
 	private int salary;
@@ -39,5 +42,12 @@ public class Employee1 {
 				+ "]";
 	}
 	
+	public static Comparator<Employee1> nameComparator = new Comparator<Employee1>() {
+		@Override
+		public int compare(Employee1  s1,Employee1  s2) {
+			return (s1.getEmployeeName().compareTo(s2.getEmployeeName()));
+		}	
+		
+	};
 	
 }
