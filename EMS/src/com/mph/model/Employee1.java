@@ -4,6 +4,10 @@ public class Employee1 {
 	private int employeeNumber;
 	private String employeeName;
 	private int salary;
+	public Employee1()
+	{
+		
+	}
 	
 	public Employee1(int employeeNumber, String employeeName, int salary) {
 		super();
