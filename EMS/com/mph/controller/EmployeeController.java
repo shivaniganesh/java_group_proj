@@ -27,8 +27,6 @@ public class EmployeeController implements EmployeeInterface {
 	public List addEmployee() {
 		emp = new Employee1();
 
-		// System.out.println(emp.empno+ " " + emp.empname);
-
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Enter your Emp Number:");
@@ -46,6 +44,7 @@ public class EmployeeController implements EmployeeInterface {
 		emp.setDept(sc.next());
 
 		Salary sal = new Salary();
+
 		System.out.println("Enter Basic:");
 		int basic = sc.nextInt();
 
@@ -57,11 +56,25 @@ public class EmployeeController implements EmployeeInterface {
 
 		sal.setNetSalary(basic);		
 
-		emp.setSalary(basic);
+		sal.setBasic(basic);
 
-		sal.setNetSalary(basic);
-		emp.setSalary(sal);
 
+		float da =(float) (0.6*basic);
+		sal.setDa(da);
+		float hra =(float) (0.5*basic);
+		sal.setHra(hra);
+	
+		float pf = (float) (0.12*basic);
+		sal.setPf(pf);
+		
+		
+		float grossSalary=basic+da+hra+pf;
+		sal.setGrossSalary(grossSalary);
+		
+		float netSalary = grossSalary -pf;
+		sal.setNetSalary(netSalary);
+		
+		emp.setSal(sal);//
 
 		empList.add(emp);
 

@@ -1,6 +1,7 @@
 package com.mph.dao;
 
 import com.mph.model.Employee1;
+import com.mph.model.Salary;
 import com.mph.util.DBConnection;
 
 import java.sql.Connection;
@@ -15,15 +16,16 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	Statement stmt;
 	PreparedStatement ps;
 	ResultSet rs;
+	
 	@Override
-	public void createEmployee(Employee1 emp) {
+	public void createEmployee(Employee1 emp, Salary sal) {
 	
 		con=DBConnection.getDBConnection();
 		try {
 			ps=con.prepareStatement("insert into EmployeeDetails(eno,ename,Salary,dept) values(?,?,?,?)");
 			int eno=emp.getEmployeeNumber();
 			String ename=emp.getEmployeeName();
-			int  Salary=emp.getSalary();
+			int  Salary=sal.getBasic();
 			String dept=emp.getDept();
 			ps.setInt(1, eno);
 			ps.setString(2,ename);
@@ -55,6 +57,11 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			e.printStackTrace();
 		}
 		
+		
+	}
+	@Override
+	public void createEmployee(Employee1 emp) {
+		// TODO Auto-generated method stub
 		
 	}
 	

@@ -8,20 +8,27 @@ public class Employee1 implements Serializable {
 	private int employeeNumber;
 	private String employeeName;
 	private String dept;
-	private int salary;
+	//private int salary;
 	private Salary sal;
+
+	//private Salary salary;
+
 	
 	public Employee1()
 	{
 
 	}
 
-	public Employee1(int employeeNumber, String employeeName, int salary) {
+
+	public Employee1(int employeeNumber, String employeeName, String dept, Salary sal) {
 		super();
 		this.employeeNumber = employeeNumber;
 		this.employeeName = employeeName;
+		this.dept=dept;
 		this.sal = sal;
 	}
+	
+
 
 	public int getEmployeeNumber() {
 		return employeeNumber;
@@ -43,31 +50,35 @@ public class Employee1 implements Serializable {
 		return dept;
 	}
 
+	
+
+
+
 	public void setDept(String dept) {
 		this.dept = dept;
 	}
 
-
-	public int getSalary() {
-		return salary;
-	}
-
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
 	public Salary getSal() {
 		return sal;
 	}
-	public void setSalary(Salary sal) {
+
+	public void setSal(Salary sal) {
 		this.sal = sal;
-
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Employee1 [employeeNumber=" + employeeNumber + ", employeeName=" + employeeName + ", dept=" + dept
 				+ ", salary=" + sal + "]";
 	}
+
+
+
+
+
+
+
+
 
 	public static Comparator<Employee1> nameComparator = new Comparator<Employee1>() {
 		@Override

@@ -16,6 +16,7 @@ public class MainClass {
 		String input = null;
 		List elist = null;
 		int choice;
+
 		try {
 			System.out.println("Welcome to EMS");
 			System.out.println("Enter User name");
@@ -25,16 +26,31 @@ public class MainClass {
 			String pw = sc.next();
 
 			String user = "shishir", pass = "pass";
-			
-	        
-			
+
+			/*
+			 * try{
+			 * 
+			 * System.out.println("Enter Project name:"); String un=sc.next();
+			 * System.out.println("Enter password:"); String pw=sc.next();
+			 * 
+			 * String user="EMS",pass="pass";
+			 * 
+			 * 
+			 * 
+			 * 
+			 */
 			if(un.equals(user)&&pw.equals(pass))
 			{   System.out.println("Please wait !!...");
 
 				Thread.sleep(3000);
 				System.out.println("Login Sucessfully.");
 				Thread.sleep(1000);
+
 				System.out.println("Welcome " + un);
+
+
+				System.out.println("Welcome to " +  un);	
+				
 
 				do {
 					System.out.println("Enter your Choice:");
