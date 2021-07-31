@@ -4,6 +4,12 @@ import com.mph.model.Employee1;
 import com.mph.model.Salary;
 
 import java.util.Comparator;
+import java.util.Iterator;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,6 +35,7 @@ public class EmployeeController implements EmployeeInterface {
 		System.out.println("Enter your name :");
 		emp.setEmployeeName(sc.next());
 
+<<<<<<< HEAD
 		
 		System.out.println("Enter your department :");
 		emp.setDept(sc.next());
@@ -45,6 +52,13 @@ public class EmployeeController implements EmployeeInterface {
 		sal.setPf(basic);
 		sal.setGrossSalary(basic);
 		sal.setNetSalary(basic);
+=======
+		System.out.println("Enter your department :");
+		emp.setDept(sc.next());
+
+		System.out.println("Enter Monthly Salary:");
+		int basic = sc.nextInt();
+>>>>>>> branch1
 		emp.setSalary(basic);
 
 		empList.add(emp);
@@ -57,10 +71,14 @@ public class EmployeeController implements EmployeeInterface {
 
 	@Override
 	public void viewEmployee(List elist) {
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 
 		elist.forEach(li -> System.out.println(li));
 
+=======
+		elist.forEach(li -> System.out.println(li));
+>>>>>>> branch1
 	}
 
 	@SuppressWarnings("unchecked")
@@ -70,13 +88,51 @@ public class EmployeeController implements EmployeeInterface {
 	}
 
 	public void groupByDepartment(List elist) {
-		Map<String,List<Employee1>> groupByDept =(Map<String, List<Employee1>>) elist.stream().collect(Collectors.groupingBy(Employee1::getDept));
-		//System.out.println(groupByDept);
-		groupByDept.forEach((dep,empInDept)->{
+		Map<String, List<Employee1>> groupByDept = (Map<String, List<Employee1>>) elist.stream()
+				.collect(Collectors.groupingBy(Employee1::getDept));
+		// System.out.println(groupByDept);
+		groupByDept.forEach((dep, empInDept) -> {
 			System.out.println(dep);
 			empInDept.forEach(System.out::println);
-			
 		});
-		
+	}
+
+	public void serializeEmp(List elist) throws IOException, Exception {
+		FileOutputStream fout = null;
+		ObjectOutputStream oos = null;
+		try {
+
+			fout = new FileOutputStream("serialemp.txt");
+			oos = new ObjectOutputStream(fout);
+
+			oos.writeObject(elist);
+			System.out.println("Emp Serialized ");
+		} catch (Exception ex) {
+			System.out.println("Serialization raising exception" + ex);
+		}
+		oos.close();
+		fout.close();
+	}
+
+	public void deSerializeEmp(List elist) throws IOException, Exception {
+		FileInputStream fin = null;
+		ObjectInputStream ois = null;
+		try {
+
+			fin = new FileInputStream("serialemp.txt");
+			ois = new ObjectInputStream(fin);
+
+			List<Employee1> emp = (List<Employee1>) ois.readObject();
+
+			System.out.println("De-Serialized Employee Object");
+			Iterator<Employee1> iter = emp.iterator();
+			while (iter.hasNext()) {
+				System.out.println(iter.next());
+			}
+		} catch (Exception ex) {
+			System.out.println("Serialization raising exception" + ex);
+		}
+		ois.close();
+		fin.close();
 	}
 }
