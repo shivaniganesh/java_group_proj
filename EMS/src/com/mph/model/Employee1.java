@@ -7,7 +7,7 @@ public class Employee1 {
 	private int employeeNumber;
 	private String employeeName;
 	private String dept;
-	private int salary;
+	private Salary sal;
 	
 	public Employee1()
 	{
@@ -18,7 +18,7 @@ public class Employee1 {
 		super();
 		this.employeeNumber = employeeNumber;
 		this.employeeName = employeeName;
-		this.salary = salary;
+		this.sal = sal;
 	}
 	public int getEmployeeNumber() {
 		return employeeNumber;
@@ -39,17 +39,17 @@ public class Employee1 {
 	public void setDept(String dept) {
 		this.dept = dept;
 	}
-	public int getSalary() {
-		return salary;
+	public Salary getSal() {
+		return sal;
 	}
-	public void setSalary(int salary) {
-		this.salary = salary;
+	public void setSalary(Salary sal) {
+		this.sal = sal;
 	}
 	
 	@Override
 	public String toString() {
 		return "Employee1 [employeeNumber=" + employeeNumber + ", employeeName=" + employeeName + ", dept=" + dept
-				+ ", salary=" + salary + "]";
+				+ ", salary=" + sal + "]";
 	}
 
 

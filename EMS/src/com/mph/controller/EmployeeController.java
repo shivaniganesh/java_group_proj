@@ -32,14 +32,11 @@ public class EmployeeController implements EmployeeInterface {
 		System.out.println("Enter your name :");
 		emp.setEmployeeName(sc.next());
 
-		
 		System.out.println("Enter your department :");
 		emp.setDept(sc.next());
-		
-
 
 		Salary sal = new Salary();
-		System.out.println("Enter Monthly Salary:");
+		System.out.println("Enter Basic:");
 		int basic = sc.nextInt();
 
 		sal.setBasic(basic);
@@ -48,11 +45,14 @@ public class EmployeeController implements EmployeeInterface {
 		sal.setPf(basic);
 		sal.setGrossSalary(basic);
 		sal.setNetSalary(basic);
-		emp.setSalary(basic);
+		emp.setSalary(sal);
 
 		empList.add(emp);
+<<<<<<< HEAD
 		//System.out.println(emp);
 		dao.createEmployee(emp);
+=======
+>>>>>>> a8e69c1c64a3a6e8f45578a2573539ea8e1519f5
 
 		System.out.println("Employee Added Sucessfully !!!");
 		return empList;
@@ -75,13 +75,14 @@ public class EmployeeController implements EmployeeInterface {
 	}
 
 	public void groupByDepartment(List elist) {
-		Map<String,List<Employee1>> groupByDept =(Map<String, List<Employee1>>) elist.stream().collect(Collectors.groupingBy(Employee1::getDept));
-		//System.out.println(groupByDept);
-		groupByDept.forEach((dep,empInDept)->{
+		Map<String, List<Employee1>> groupByDept = (Map<String, List<Employee1>>) elist.stream()
+				.collect(Collectors.groupingBy(Employee1::getDept));
+		// System.out.println(groupByDept);
+		groupByDept.forEach((dep, empInDept) -> {
 			System.out.println(dep);
 			empInDept.forEach(System.out::println);
-			
+
 		});
-		
+
 	}
 }
