@@ -22,13 +22,13 @@ public class MainClass {
 		List elist=null;
 		int choice;
 		try{
-			System.out.println("Welcome to EMS");
-			System.out.println("Enter User name");
+			
+			System.out.println("Enter Project name:");
 			String un=sc.next();
-			System.out.println("Enter password");
+			System.out.println("Enter password:");
 			String pw=sc.next();
 			
-			String user="ems",pass="pass";
+			String user="EMS",pass="pass";
 	
 			
 	        
@@ -38,7 +38,7 @@ public class MainClass {
 				Thread.sleep(3000);
 				System.out.println("Login Sucessfully.");
 				Thread.sleep(1000);
-				System.out.println("Welcome " +  un);	
+				System.out.println("Welcome to " +  un);	
 				
 				do {
 					System.out.println("Enter your Choice:");

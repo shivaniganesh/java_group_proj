@@ -1,12 +1,14 @@
 package com.mph.model;
 
-public class Salary {
+import java.io.Serializable;
+
+public class Salary implements Serializable{
 	private int basic;
-	private int da;
-	private int hra;
-	private int pf;
-	private int grossSalary;
-	private int netSalary;
+	private float da;
+	private float hra;
+	private float pf;
+	private float grossSalary;
+	private float netSalary;
 
 	public int getBasic() {
 		return basic;
@@ -16,44 +18,8 @@ public class Salary {
 		this.basic = basic;
 	}
 
-	public int getDa() {
+	public float getDa() {
 		return da;
-	}
-
-	public void setDa(int basic) {
-		this.da = basic * 36 / 100;
-	}
-
-	public int getHra() {
-		return hra;
-	}
-
-	public void setHra(int basic) {
-		this.hra = basic * 10 / 100;
-	}
-
-	public int getPf() {
-		return pf;
-	}
-
-	public void setPf(int basic) {
-		this.pf = basic * 12 / 100;
-	}
-
-	public int getGrossSalary() {
-		return grossSalary;
-	}
-
-	public void setGrossSalary(int basic) {
-		this.grossSalary = basic + this.da + this.hra + this.pf;
-	}
-
-	public int getNetSalary() {
-		return netSalary;
-	}
-
-	public void setNetSalary(int basic) {
-		this.netSalary = basic + this.da + this.hra;
 	}
 
 	@Override
@@ -61,4 +27,42 @@ public class Salary {
 		return "Salary [basic=" + basic + ", da=" + da + ", hra=" + hra + ", pf=" + pf + ", grossSalary=" + grossSalary
 				+ ", netSalary=" + netSalary + "]";
 	}
+
+	public void setDa(float da) {
+		this.da = da;
+	}
+
+	public float getHra() {
+		return hra;
+	}
+
+	public void setHra(float hra) {
+		this.hra = hra;
+	}
+
+	public float getPf() {
+		return pf;
+	}
+
+	public void setPf(float pf) {
+		this.pf = pf;
+	}
+
+	public float getGrossSalary() {
+		return grossSalary;
+	}
+
+	public void setGrossSalary(float grossSalary) {
+		this.grossSalary = grossSalary;
+	}
+
+	public float getNetSalary() {
+		return netSalary;
+	}
+
+	public void setNetSalary(float netSalary) {
+		this.netSalary = netSalary;
+	}
+
 }
+
