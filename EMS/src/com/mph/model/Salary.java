@@ -1,6 +1,7 @@
 package com.mph.model;
 
 public class Salary {
+	
 	private int basic;
 	private int da;
 	private int hra;

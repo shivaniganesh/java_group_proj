@@ -1,5 +1,7 @@
 package com.mph.controller;
 
+import com.mph.dao.EmployeeDao;
+import com.mph.dao.EmployeeDaoImpl;
 import com.mph.model.Employee1;
 import com.mph.model.Salary;
 
@@ -20,6 +22,7 @@ import java.util.stream.Collectors;
 public class EmployeeController implements EmployeeInterface {
 	List empList = new ArrayList();
 	Employee1 emp;
+	EmployeeDao dao=new EmployeeDaoImpl();
 
 	public List addEmployee() {
 		emp = new Employee1();
@@ -36,14 +39,14 @@ public class EmployeeController implements EmployeeInterface {
 		emp.setEmployeeName(sc.next());
 
 
+
 		
+
 		System.out.println("Enter your department :");
 		emp.setDept(sc.next());
-		
-
 
 		Salary sal = new Salary();
-		System.out.println("Enter Monthly Salary:");
+		System.out.println("Enter Basic:");
 		int basic = sc.nextInt();
 
 		sal.setBasic(basic);
@@ -51,12 +54,21 @@ public class EmployeeController implements EmployeeInterface {
 		sal.setHra(basic);
 		sal.setPf(basic);
 		sal.setGrossSalary(basic);
+
 		sal.setNetSalary(basic);		
 
 		emp.setSalary(basic);
 
+		sal.setNetSalary(basic);
+		emp.setSalary(sal);
+
+
 		empList.add(emp);
-		System.out.println(emp);
+
+		//System.out.println(emp);
+		dao.createEmployee(emp);
+
+
 
 		System.out.println("Employee Added Sucessfully !!!");
 		return empList;
@@ -69,6 +81,7 @@ public class EmployeeController implements EmployeeInterface {
 		// TODO Auto-generated method stub
 
 		elist.forEach(li -> System.out.println(li));
+		dao.listEmployee();
 
 
 	}
@@ -85,6 +98,7 @@ public class EmployeeController implements EmployeeInterface {
 		groupByDept.forEach((dep, empInDept) -> {
 			System.out.println(dep);
 			empInDept.forEach(System.out::println);
+
 		});
 	}
 
@@ -125,5 +139,7 @@ public class EmployeeController implements EmployeeInterface {
 		}
 		ois.close();
 		fin.close();
+
+		}
 	}
-}
+
