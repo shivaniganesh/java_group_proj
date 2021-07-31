@@ -1,8 +1,13 @@
 package com.mph.model;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 
 public class Salary implements Serializable{
+=======
+public class Salary {
+	
+>>>>>>> a8e69c1c64a3a6e8f45578a2573539ea8e1519f5
 	private int basic;
 	private float da;
 	private float hra;
