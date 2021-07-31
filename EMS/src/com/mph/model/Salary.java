@@ -20,40 +20,40 @@ public class Salary {
 		return da;
 	}
 
-	public void setDa(int da) {
-		this.da = da;
+	public void setDa(int basic) {
+		this.da = basic * 36 / 100;
 	}
 
 	public int getHra() {
 		return hra;
 	}
 
-	public void setHra(int hra) {
-		this.hra = hra;
+	public void setHra(int basic) {
+		this.hra = basic * 10 / 100;
 	}
 
 	public int getPf() {
 		return pf;
 	}
 
-	public void setPf(int pf) {
-		this.pf = pf;
+	public void setPf(int basic) {
+		this.pf = basic * 12 / 100;
 	}
 
 	public int getGrossSalary() {
 		return grossSalary;
 	}
 
-	public void setGrossSalary(int grossSalary) {
-		this.grossSalary = grossSalary;
+	public void setGrossSalary(int basic) {
+		this.grossSalary = basic + this.da + this.hra + this.pf;
 	}
 
 	public int getNetSalary() {
 		return netSalary;
 	}
 
-	public void setNetSalary(int netSalary) {
-		this.netSalary = netSalary;
+	public void setNetSalary(int basic) {
+		this.netSalary = basic + this.da + this.hra;
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class EmployeeController implements EmployeeInterface {
 		System.out.println("Enter your name :");
 		emp.setEmployeeName(sc.next());
 
-<<<<<<< HEAD
+
 		
 		System.out.println("Enter your department :");
 		emp.setDept(sc.next());
@@ -51,14 +51,8 @@ public class EmployeeController implements EmployeeInterface {
 		sal.setHra(basic);
 		sal.setPf(basic);
 		sal.setGrossSalary(basic);
-		sal.setNetSalary(basic);
-=======
-		System.out.println("Enter your department :");
-		emp.setDept(sc.next());
+		sal.setNetSalary(basic);		
 
-		System.out.println("Enter Monthly Salary:");
-		int basic = sc.nextInt();
->>>>>>> branch1
 		emp.setSalary(basic);
 
 		empList.add(emp);
@@ -71,14 +65,12 @@ public class EmployeeController implements EmployeeInterface {
 
 	@Override
 	public void viewEmployee(List elist) {
-<<<<<<< HEAD
+
 		// TODO Auto-generated method stub
 
 		elist.forEach(li -> System.out.println(li));
 
-=======
-		elist.forEach(li -> System.out.println(li));
->>>>>>> branch1
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -88,8 +80,7 @@ public class EmployeeController implements EmployeeInterface {
 	}
 
 	public void groupByDepartment(List elist) {
-		Map<String, List<Employee1>> groupByDept = (Map<String, List<Employee1>>) elist.stream()
-				.collect(Collectors.groupingBy(Employee1::getDept));
+		Map<String,List<Employee1>> groupByDept =(Map<String, List<Employee1>>) elist.stream().collect(Collectors.groupingBy(Employee1::getDept));
 		// System.out.println(groupByDept);
 		groupByDept.forEach((dep, empInDept) -> {
 			System.out.println(dep);

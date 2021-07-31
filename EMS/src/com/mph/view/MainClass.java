@@ -21,12 +21,16 @@ public class MainClass {
 			System.out.println("Enter User name");
 			String un = sc.next();
 			System.out.println("Enter password");
+
 			String pw = sc.next();
 
 			String user = "shishir", pass = "pass";
+			
+	        
+			
+			if(un.equals(user)&&pw.equals(pass))
+			{   System.out.println("Please wait !!...");
 
-			if (un.equals(user) && pw.equals(pass)) {
-				System.out.println("Please wait !!...");
 				Thread.sleep(3000);
 				System.out.println("Login Sucessfully.");
 				Thread.sleep(1000);
