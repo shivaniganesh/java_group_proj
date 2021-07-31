@@ -3,12 +3,12 @@ package com.mph.controller;
 
 import com.mph.model.Employee1;
 import java.util.Comparator;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 
 public class EmployeeController implements EmployeeInterface {
@@ -30,6 +30,8 @@ public class EmployeeController implements EmployeeInterface {
 		System.out.println("Enter your name :");
 		emp.setEmployeeName(sc.next());
 		
+		System.out.println("Enter your department :");
+		emp.setDept(sc.next());
 		
 		System.out.println("Enter Monthly Salary:");
 		int basic =sc.nextInt();
@@ -66,5 +68,16 @@ public class EmployeeController implements EmployeeInterface {
 	public void sortEmployeeByName(List elist) {
 		Collections.sort(elist,Employee1.nameComparator);
 		elist.forEach(li->System.out.println(li));
+	}
+
+	public void groupByDepartment(List elist) {
+		Map<String,List<Employee1>> groupByDept =(Map<String, List<Employee1>>) elist.stream().collect(Collectors.groupingBy(Employee1::getDept));
+		//System.out.println(groupByDept);
+		groupByDept.forEach((dep,empInDept)->{
+			System.out.println(dep);
+			empInDept.forEach(System.out::println);
+			
+		});
+		
 	}
 }

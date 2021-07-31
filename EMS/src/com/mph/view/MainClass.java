@@ -45,6 +45,7 @@ public class MainClass {
 					System.out.println("1. Add Employee");
 					System.out.println("2. View Employee");
 					System.out.println("3. Sort by Employee Name");
+					System.out.println("4. Group by department");
 					
 					choice = sc.nextInt();
 
@@ -62,7 +63,10 @@ public class MainClass {
 						ec.sortEmployeeByName(elist);
 						break;
 					}
-
+					case 4: {
+						ec.groupByDepartment(elist);
+						break;
+					}
 					
 					
 					default :System.out.println("Please enter valid choice");

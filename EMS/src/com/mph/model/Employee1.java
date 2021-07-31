@@ -6,7 +6,9 @@ public class Employee1 {
 	
 	private int employeeNumber;
 	private String employeeName;
+	private String dept;
 	private int salary;
+	
 	public Employee1()
 	{
 		
@@ -30,18 +32,27 @@ public class Employee1 {
 	public void setEmployeeName(String employeeName) {
 		this.employeeName = employeeName;
 	}
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
 	public int getSalary() {
 		return salary;
 	}
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
+	
 	@Override
 	public String toString() {
-		return "Employee1 [employeeNumber=" + employeeNumber + ", employeeName=" + employeeName + ", salary=" + salary
-				+ "]";
+		return "Employee1 [employeeNumber=" + employeeNumber + ", employeeName=" + employeeName + ", dept=" + dept
+				+ ", salary=" + salary + "]";
 	}
-	
+
+
 	public static Comparator<Employee1> nameComparator = new Comparator<Employee1>() {
 		@Override
 		public int compare(Employee1  s1,Employee1  s2) {
