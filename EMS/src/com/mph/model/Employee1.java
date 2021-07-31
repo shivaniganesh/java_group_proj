@@ -7,11 +7,7 @@ public class Employee1 {
 	private int employeeNumber;
 	private String employeeName;
 	private String dept;
-<<<<<<< HEAD
 	private Salary salary;
-=======
-	private Salary sal;
->>>>>>> a8e69c1c64a3a6e8f45578a2573539ea8e1519f5
 	
 	public Employee1()
 	{
@@ -22,11 +18,7 @@ public class Employee1 {
 		super();
 		this.employeeNumber = employeeNumber;
 		this.employeeName = employeeName;
-<<<<<<< HEAD
 		this.salary = sal;
-=======
-		this.sal = sal;
->>>>>>> a8e69c1c64a3a6e8f45578a2573539ea8e1519f5
 	}
 	public int getEmployeeNumber() {
 		return employeeNumber;
@@ -51,7 +43,6 @@ public class Employee1 {
 	public void setDept(String dept) {
 		this.dept = dept;
 	}
-<<<<<<< HEAD
 
 	public Salary getSalary() {
 		return salary;
@@ -59,13 +50,6 @@ public class Employee1 {
 
 	public void setSalary(Salary salary) {
 		this.salary = salary;
-=======
-	public Salary getSal() {
-		return sal;
-	}
-	public void setSalary(Salary sal) {
-		this.sal = sal;
->>>>>>> a8e69c1c64a3a6e8f45578a2573539ea8e1519f5
 	}
 
 
@@ -74,7 +58,7 @@ public class Employee1 {
 	@Override
 	public String toString() {
 		return "Employee1 [employeeNumber=" + employeeNumber + ", employeeName=" + employeeName + ", dept=" + dept
-				+ ", salary=" + sal + "]";
+				+ ", salary=" + salary + "]";
 	}
 
 
