@@ -1,5 +1,7 @@
 package com.mph.controller;
 
+import com.mph.dao.EmployeeDao;
+import com.mph.dao.EmployeeDaoImpl;
 import com.mph.model.Employee1;
 import com.mph.model.Salary;
 
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 public class EmployeeController implements EmployeeInterface {
 	List empList = new ArrayList();
 	Employee1 emp;
+	EmployeeDao dao=new EmployeeDaoImpl();
 
 	public List addEmployee() {
 		emp = new Employee1();
@@ -48,7 +51,8 @@ public class EmployeeController implements EmployeeInterface {
 		emp.setSalary(basic);
 
 		empList.add(emp);
-		System.out.println(emp);
+		//System.out.println(emp);
+		dao.createEmployee(emp);
 
 		System.out.println("Employee Added Sucessfully !!!");
 		return empList;
@@ -60,6 +64,7 @@ public class EmployeeController implements EmployeeInterface {
 		// TODO Auto-generated method stub
 
 		elist.forEach(li -> System.out.println(li));
+		dao.listEmployee();
 
 	}
 
